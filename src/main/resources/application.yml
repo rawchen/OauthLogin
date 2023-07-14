@@ -1,0 +1,35 @@
+server:
+  port: 8060
+spring:
+  application:
+    name: OauthLogin
+  web:
+    resources:
+      chain:
+        strategy:
+          content:
+            enabled: true
+            paths: /**
+  # 模板引擎
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
+    mode: HTML5
+    encoding: UTF-8
+    cache: true
+    servlet:
+      content-type: text/html
+
+  # MVC
+  mvc:
+    static-path-pattern: static/**
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://119.91.xxx.xx:3306/oauth_login?serverTimezone=Asia/Shanghai&characterEncoding=utf8&useUnicode=true&useSSL=false
+    username: oauth_login
+    password: oauth_login
+
+qq:
+  redirect: https://cq.rawchen.com/callback
+  app-id: 102060xxx
+  app-key: 0tY5OTLzShhXDxxx
